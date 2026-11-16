@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17201c">
+  <meta name="description" content="Find television shows, explore Canadian cinema, and keep a watchlist on your device.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.tvmaze.com; img-src 'self' https://static.tvmaze.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Screen Radar · CoolCode</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#workbench">Skip to discovery tools</a>
+  <header class="masthead"><div class="site"><a class="brand" href="https://coolcode.ca/"><span aria-hidden="true">&gt;_</span>CoolCode.ca</a><nav aria-label="Help"><a href="#sources">Sources &amp; privacy</a></nav></div></header>
+  <section class="hero"><div class="site">
+    <p class="eyebrow">Film &amp; television</p>
+    <h1>Screen Radar<span>.</span></h1>
+    <p>Find a show you half remember, explore Canadian films from the 1970s onward, and save a watchlist on this device.</p>
+  </div></section>
+  <main class="site" id="workbench">
+    <nav class="view-tabs" aria-label="Screen Radar views"><button data-view="tv" aria-pressed="true">TV search</button><button data-view="film" aria-pressed="false">Canadian film shelf</button><button data-view="saved" aria-pressed="false">Watchlist <span id="count"></span></button></nav>
+    <section id="tv" class="panel" aria-labelledby="tv-heading">
+      <h2 id="tv-heading">Find a TV show</h2>
+      <form id="tv-form" role="search">
+        <label for="query">Show title</label>
+        <div class="search-row"><input type="search" id="query" maxlength="100" required placeholder="Try Due South or Da Vinci’s Inquest"><button class="primary" type="submit">Search TVmaze</button></div>
+      </form>
+      <div class="preset-bar" aria-label="Search suggestions">
+        <span>Try</span><button type="button" class="pill" data-query="Due South">Due South</button><button type="button" class="pill" data-query="Da Vinci's Inquest">Da Vinci’s Inquest</button><button type="button" class="pill" data-query="The Beachcombers">The Beachcombers</button>
+      </div>
+    </section>
+    <section id="film" class="panel" aria-labelledby="film-heading" hidden>
+      <h2 id="film-heading">Browse a curated Canadian film shelf</h2>
+      <div class="control-grid">
+        <div><label for="film-query">Title, director or genre</label><input type="search" id="film-query" placeholder="Try Cronenberg or documentary"></div>
+        <div><label for="era">Release decade</label><select id="era"><option value="">All decades</option><option>1970s</option><option>1980s</option><option>1990s</option><option>2000s</option><option>2010s</option><option>2020s</option></select></div>
+        <div><label for="genre">Genre</label><select id="genre"><option value="">All genres</option></select></div>
+      </div>
+    </section>
+    <section id="saved" class="panel" aria-labelledby="saved-heading" hidden>
+      <h2 id="saved-heading">Your watchlist</h2>
+      <p class="fine">Saves stay in this browser. Download a copy to keep outside CoolCode.</p>
+      <button type="button" class="secondary" id="export">Download CSV</button>
+    </section>
+    <p class="status" id="status" role="status">Enter a show title or open the Canadian film shelf.</p>
+    <section id="results" class="records" aria-label="Results"></section>
+    <noscript><p class="empty">Turn on JavaScript to search here, or open <a href="https://www.tvmaze.com/">TVmaze</a>.</p></noscript>
+    <aside class="panel source" id="sources">
+      <h2>Sources and privacy</h2>
+      <p>TV searches and show details go directly to <a href="https://www.tvmaze.com/api">TVmaze</a>. TV metadata is attributed to TVmaze under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> and displays the source link on each result. Loading TV results can also load TVmaze’s cover images.</p>
+      <p>The film shelf uses selected Canadian records from <a href="https://www.wikidata.org/wiki/Wikidata:Copyright">Wikidata</a> under CC0. It is a handpicked collection. Film filtering and the watchlist run on this device.</p>
+      <p>Follow the linked source for updated credits and release details. Schedules and viewing availability vary by region.</p>
+    </aside>
+  </main>
+  <dialog id="details" aria-labelledby="detail-title"><form method="dialog" class="dialog-controls"><button type="submit" class="secondary">Close</button></form><div id="detail-body"></div></dialog>
+  <footer><div class="site"><a href="https://coolcode.ca/">CoolCode.ca</a><a href="https://github.com/jsdyer/screenradar">Application source on GitHub ↗</a></div></footer>
+</body>
+</html>

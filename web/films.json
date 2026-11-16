@@ -1,0 +1,191 @@
+[
+  {
+    "id": "Q2443599",
+    "title": "Mon oncle Antoine",
+    "year": 1971,
+    "director": "Claude Jutra",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q5577677",
+    "title": "Goin' Down the Road",
+    "year": 1970,
+    "director": "Donald Shebib",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q3987425",
+    "title": "The Grey Fox",
+    "year": 1982,
+    "director": "Phillip Borsos",
+    "genre": "Western"
+  },
+  {
+    "id": "Q747551",
+    "title": "Videodrome",
+    "year": 1983,
+    "director": "David Cronenberg",
+    "genre": "Horror"
+  },
+  {
+    "id": "Q488595",
+    "title": "I've Heard the Mermaids Singing",
+    "year": 1987,
+    "director": "Patricia Rozema",
+    "genre": "Comedy-drama"
+  },
+  {
+    "id": "Q1675125",
+    "title": "Jesus of Montreal",
+    "year": 1989,
+    "director": "Denys Arcand",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q1617999",
+    "title": "Highway 61",
+    "year": 1991,
+    "director": "Bruce McDonald",
+    "genre": "Comedy"
+  },
+  {
+    "id": "Q135315",
+    "title": "The Sweet Hereafter",
+    "year": 1997,
+    "director": "Atom Egoyan",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q467840",
+    "title": "Cube",
+    "year": 1997,
+    "director": "Vincenzo Natali",
+    "genre": "Science fiction"
+  },
+  {
+    "id": "Q607328",
+    "title": "The Hanging Garden",
+    "year": 1997,
+    "director": "Thom Fitzgerald",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q574034",
+    "title": "Last Night",
+    "year": 1998,
+    "director": "Don McKellar",
+    "genre": "Comedy-drama"
+  },
+  {
+    "id": "Q7012322",
+    "title": "New Waterford Girl",
+    "year": 1999,
+    "director": "Allan Moyle",
+    "genre": "Comedy-drama"
+  },
+  {
+    "id": "Q1475136",
+    "title": "Ginger Snaps",
+    "year": 2000,
+    "director": "John Fawcett",
+    "genre": "Horror"
+  },
+  {
+    "id": "Q604192",
+    "title": "Atanarjuat: The Fast Runner",
+    "year": 2001,
+    "director": "Zacharias Kunuk",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q576373",
+    "title": "FUBAR",
+    "year": 2002,
+    "director": "Michael Dowse",
+    "genre": "Mockumentary"
+  },
+  {
+    "id": "Q1022379",
+    "title": "C.R.A.Z.Y.",
+    "year": 2005,
+    "director": "Jean-Marc Vallée",
+    "genre": "Comedy-drama"
+  },
+  {
+    "id": "Q892035",
+    "title": "Bon Cop, Bad Cop",
+    "year": 2006,
+    "director": "Érik Canuel",
+    "genre": "Comedy"
+  },
+  {
+    "id": "Q593123",
+    "title": "My Winnipeg",
+    "year": 2007,
+    "director": "Guy Maddin",
+    "genre": "Documentary"
+  },
+  {
+    "id": "Q1059028",
+    "title": "Pontypool",
+    "year": 2008,
+    "director": "Bruce McDonald",
+    "genre": "Horror"
+  },
+  {
+    "id": "Q1212650",
+    "title": "Incendies",
+    "year": 2010,
+    "director": "Denis Villeneuve",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q7620031",
+    "title": "Stories We Tell",
+    "year": 2012,
+    "director": "Sarah Polley",
+    "genre": "Documentary"
+  },
+  {
+    "id": "Q27959496",
+    "title": "Werewolf",
+    "year": 2016,
+    "director": "Ashley McKenzie",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q72710320",
+    "title": "Kuessipan",
+    "year": 2019,
+    "director": "Myriam Verreault",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q66122420",
+    "title": "The Body Remembers When the World Broke Open",
+    "year": 2019,
+    "director": "Elle-Máijá Tailfeathers and Kathleen Hepburn",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q97959512",
+    "title": "Beans",
+    "year": 2020,
+    "director": "Tracey Deer",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q113549047",
+    "title": "Riceboy Sleeps",
+    "year": 2022,
+    "director": "Anthony Shim",
+    "genre": "Drama"
+  },
+  {
+    "id": "Q116315647",
+    "title": "BlackBerry",
+    "year": 2023,
+    "director": "Matt Johnson",
+    "genre": "Comedy-drama"
+  }
+]
