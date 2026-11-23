@@ -1,0 +1,23 @@
+{
+  "id": "screenradar",
+  "title": "Screen Radar",
+  "description": "Find television and Canadian films, and keep a watchlist in this browser.",
+  "category": "media",
+  "tags": [
+    "tv",
+    "tvmaze",
+    "movie",
+    "films",
+    "cancon",
+    "cinema"
+  ],
+  "icon": "tv-minimal",
+  "url": "/screenradar/",
+  "source": "https://github.com/jsdyer/screenradar",
+  "hosting": "project",
+  "access": "browser",
+  "data_info": {
+    "mode": "mixed",
+    "detail": "TV searches use TVmaze, and the selected Canadian films come from Wikidata."
+  }
+}
