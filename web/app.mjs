@@ -1,3 +1,5 @@
+import {startActors} from './actors.mjs';
+import {creditItem} from './actors-model.mjs';
 import { csvCell, filmItem, plainSummary, searchFilms, tvItem } from './model.mjs';
 
 const api = 'https://api.tvmaze.com/';
@@ -60,6 +62,7 @@ function readSaved() {
         const film = filmItem({ id: item.id, title: item.title, year: item.year, director: item.detail, genre: item.genre });
         return [[film.key, film]];
       }
+      if(item?.source==='TMDb'){const credit=creditItem({...item,release_date:item.year?`${item.year}-01-01`:'',character:item.detail});if(credit)return [[credit.key,credit]];}
       return [];
     }));
   } catch {
@@ -142,6 +145,7 @@ function render() {
     if (filmError) setStatus('The film shelf did not load. Reload to try again.', true);
     else if (!films) setStatus('Opening the Canadian film shelf…');
     else setStatus(items.length ? items.length + ' of ' + films.length + ' Canadian films.' : 'No films match these filters.');
+  } else if(view==='actors'){setStatus('Explore recorded birthplaces, then open credits to add titles to your watchlist.');
   } else {
     items = [...saved.values()].reverse();
     get('export').disabled = !items.length;
@@ -151,7 +155,7 @@ function render() {
 }
 
 function switchView(next) {
-  if (!['tv', 'film', 'saved'].includes(next)) return;
+  if (!['tv', 'film', 'actors', 'saved'].includes(next)) return;
   view = next;
   for (const control of document.querySelectorAll('[data-view]')) {
     const selected = control.dataset.view === view;
@@ -287,3 +291,5 @@ fetch('./films.json', { signal: AbortSignal.timeout(10000) }).then(response => {
   filmError = true;
   if (view === 'film') render();
 });
+
+startActors(card);

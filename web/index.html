@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17201c">
   <meta name="description" content="Find television shows, explore Canadian cinema, and keep a watchlist on your device.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.tvmaze.com; img-src 'self' https://static.tvmaze.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.tvmaze.com https://en.wikipedia.org https://query.wikidata.org https://coolcode-visitor-api.jeffdyer.workers.dev; img-src 'self' https://static.tvmaze.com https://image.tmdb.org; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Screen Radar · CoolCode</title>
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./app.mjs"></script>
@@ -20,7 +20,7 @@
     <p>Find a show you half remember, explore Canadian films from the 1970s onward, and save a watchlist on this device.</p>
   </div></section>
   <main class="site" id="workbench">
-    <nav class="view-tabs" aria-label="Screen Radar views"><button data-view="tv" aria-pressed="true">TV search</button><button data-view="film" aria-pressed="false">Canadian film shelf</button><button data-view="saved" aria-pressed="false">Watchlist <span id="count"></span></button></nav>
+    <nav class="view-tabs" aria-label="Screen Radar views"><button data-view="tv" aria-pressed="true">TV search</button><button data-view="film" aria-pressed="false">Canadian film shelf</button><button data-view="actors" aria-pressed="false">Actors by birthplace</button><button data-view="saved" aria-pressed="false">Watchlist <span id="count"></span></button></nav>
     <section id="tv" class="panel" aria-labelledby="tv-heading">
       <h2 id="tv-heading">Find a TV show</h2>
       <form id="tv-form" role="search">
@@ -39,6 +39,16 @@
         <div><label for="genre">Genre</label><select id="genre"><option value="">All genres</option></select></div>
       </div>
     </section>
+    <section id="actors" class="panel" aria-labelledby="actors-heading" hidden>
+      <h2 id="actors-heading">Who was born around here?</h2>
+      <p>Discover actors whose recorded birthplaces are near a town. This describes birthplace, not where someone lives now. Distances use birthplace coordinates, often the centre of a town.</p>
+      <form id="actor-place-form"><label for="actor-place-name">Town or landmark</label><div class="search-row"><input id="actor-place-name" maxlength="120" value="Halifax, Nova Scotia" required><button type="submit" class="secondary">Find place</button></div></form>
+      <div id="actor-places" class="preset-bar"></div><div id="actor-presets" class="preset-bar" aria-label="Birthplace starting points"></div>
+      <form id="actor-form"><div class="control-grid"><label>Latitude<input id="actor-lat" type="number" step="any" min="-90" max="90" value="44.649" required></label><label>Longitude<input id="actor-lon" type="number" step="any" min="-180" max="180" value="-63.575" required></label><label>Within<select id="actor-radius"><option value="10">10 km</option><option value="30" selected>30 km</option><option value="50">50 km</option><option value="100">100 km</option></select></label></div><button type="submit" class="primary">Find actors</button></form>
+      <p id="actor-status" role="status">Choose a place or coordinates, then Find actors.</p><div id="actor-results"></div>
+      <p class="fine">Wikidata CC0 birthplace/occupation records; maximum 100 matching birthplace statements per query. Coverage is incomplete and occupations include stage and voice actors. Notable credits load from TMDb only when requested.</p>
+      <p class="tmdb-credit"><img src="./tmdb.svg" alt="TMDB" width="110"> This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </section>
     <section id="saved" class="panel" aria-labelledby="saved-heading" hidden>
       <h2 id="saved-heading">Your watchlist</h2>
       <p class="fine">Saves stay in this browser. Download a copy to keep outside CoolCode.</p>
@@ -51,6 +61,7 @@
       <h2>Sources and privacy</h2>
       <p>TV searches and show details go directly to <a href="https://www.tvmaze.com/api">TVmaze</a>. TV metadata is attributed to TVmaze under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> and displays the source link on each result. Loading TV results can also load TVmaze’s cover images.</p>
       <p>The film shelf uses selected Canadian records from <a href="https://www.wikidata.org/wiki/Wikidata:Copyright">Wikidata</a> under CC0. It is a handpicked collection. Film filtering and the watchlist run on this device.</p>
+      <p>Actor place searches go to English Wikipedia; coordinates and radius go to Wikidata Query Service. Opening credits sends the public actor Wikidata ID to the CoolCode API and TMDb. API credentials stay on the server. TMDb artwork loads from its image host. Actor searches are not saved; only titles you choose to save enter the local watchlist.</p>
       <p>Follow the linked source for updated credits and release details. Schedules and viewing availability vary by region.</p>
     </aside>
   </main>

@@ -1,7 +1,7 @@
 {
   "id": "screenradar",
   "title": "Screen Radar",
-  "description": "Find television and Canadian films, and keep a watchlist in this browser.",
+  "description": "Find TV and Canadian films, discover actors born near a town, and save a watchlist.",
   "category": "media",
   "tags": [
     "tv",
@@ -9,7 +9,10 @@
     "movie",
     "films",
     "cancon",
-    "cinema"
+    "cinema",
+    "actors",
+    "birthplaces",
+    "TMDb"
   ],
   "icon": "tv-minimal",
   "url": "/screenradar/",
@@ -18,6 +21,6 @@
   "access": "browser",
   "data_info": {
     "mode": "mixed",
-    "detail": "TV searches use TVmaze, and the selected Canadian films come from Wikidata."
+    "detail": "TVmaze searches, selected Wikidata films, live Wikidata birthplaces and optional TMDb credits."
   }
 }
